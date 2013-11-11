@@ -4,6 +4,7 @@ public class TempTest {
 
 	public static void main(String[] args) {
 		System.out.println("first git java file test");
+		
 		int condition = 3;
 		switch (condition) {
 		case 1:
