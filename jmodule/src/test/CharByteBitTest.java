@@ -15,8 +15,8 @@ public class CharByteBitTest {
 //		toBits(~3 + 1);
 //		toBits(1 << 32);
 //		
-		echoBytesTest("cn=中 ");
-		charEncode();
+		echoBytesTest("c");
+//		charEncode();
 //		System.out.printf("%d",0xFE);
 		System.out.println(Charset.defaultCharset());
 		System.out.println(new String(Character.toChars(0x0D0A)));
