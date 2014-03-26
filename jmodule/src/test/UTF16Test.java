@@ -1,12 +1,21 @@
 package test;
 
+import java.nio.charset.Charset;
+
 public class UTF16Test {  
     public static void main(String[] args) {  
           String sample = null;  
           if(args.length > 0) {  
               sample = args[0];  
           } else {  
+        	  System.out.println("default charset : " + Charset.defaultCharset().name());
               // for the sake of not show the character of u+1D56B  
+        	  char[] chars = Character.toChars(0x1D56B);
+        	  //char 'A'
+        	  System.out.println(new String(Character.toChars(0x0041)) + " : char(code unit) : " +  Character.toChars(0x0041).length);
+        	  //char 'һ'
+        	  System.out.println(new String(Character.toChars(0x4E00)) + " : char(code unit) : " + Character.toChars(0x4E00).length);
+        	  System.out.println("supplementary chrar[] length : " + chars.length);
               String special = new String(Character.toChars(0x1D56B));  
               sample = special+" zZ";  
           }  
