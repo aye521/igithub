@@ -1,7 +1,5 @@
 package test;
 
-import java.net.URL;
-
 public class TempTest {
 
 	public static void main(String[] args) {
