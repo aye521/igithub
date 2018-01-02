@@ -2,9 +2,28 @@ package initialization;
 
 class InitBlocksDemo {
 
+    {
+            System.out.println(this.i);// can't use a field before it is defined
+            i = 20;               //but, can be initialized
+    }
+
+    int i;
+
+    static int k;
+
+    static
+    {
+        System.out.println(k);
+        System.out.println(InitBlocksDemo.j); //but this way is ok
+        //     System.out.println(j);  can't use a field before it is defined
+        //     k=j;                   even you can't use it to initialize other fields
+        j=k;                    //but, can be initialized.
+    }
+
+    static int j;
     InitBlocksDemo(int x) {
-        this.name = "enter constructor prasad";
-        System.out.println("In 1 argument constructor, name = " + this.name);
+        name = "enter constructor prasad";
+        System.out.println("In 1 argument constructor, name = " + name);
     }
 
     InitBlocksDemo() {
@@ -17,13 +36,15 @@ class InitBlocksDemo {
 
     static{
         //can't access the static filed 'class filed cause of order
-        System.out.println("In first static init block ");
+//        System.out.println("In first static init block " + classFiled);
+        // but can be initialized
+        classFiled = "first static block";
     }
 
     static String classFiled = "class Filed";
     /* First instance initialization block  */
     {
-        //instance block without consider the order of definition instance field,so can access the name field
+        //this.name is ok ,but just name will cause compile error : illegal forward reference
         System.out.println("In first instance init block, name = " + this.name);
     }
 
