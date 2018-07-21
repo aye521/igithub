@@ -7,16 +7,16 @@ import java.lang.reflect.Proxy;
 public class DynamicProxy implements InvocationHandler {
 
 	     /**
-	  	  * ²Ù×÷Õß
+	  	  * æ“ä½œè€…
 	      */
 	    private Object proxy;
 	    /**
-	     * Òª´¦ÀíµÄ¶ÔÏó(Ò²¾ÍÊÇÎÒÃÇÒªÔÚ·½·¨µÄÇ°ºó¼ÓÉÏÒµÎñÂß¼­µÄ¶ÔÏó,ÈçÀı×ÓÖĞµÄHello)
+	     * è¦å¤„ç†çš„å¯¹è±¡(ä¹Ÿå°±æ˜¯æˆ‘ä»¬è¦åœ¨æ–¹æ³•çš„å‰ååŠ ä¸Šä¸šåŠ¡é€»è¾‘çš„å¯¹è±¡,å¦‚ä¾‹å­ä¸­çš„Hello)
 	     */
 	    private Object delegate;
 	
 	    /**
-	     * ¶¯Ì¬Éú³É·½·¨±»´¦Àí¹ıºóµÄ¶ÔÏó (Ğ´·¨¹Ì¶¨)
+	     * åŠ¨æ€ç”Ÿæˆæ–¹æ³•è¢«å¤„ç†è¿‡åçš„å¯¹è±¡ (å†™æ³•å›ºå®š)
 	     * 
 	     * @param delegate
 	     * @param proxy
@@ -31,26 +31,26 @@ public class DynamicProxy implements InvocationHandler {
 	                        .getClass().getInterfaces(), this);
 	    }
 	    /**
-	     * Òª´¦ÀíµÄ¶ÔÏóÖĞµÄÃ¿¸ö·½·¨»á±»´Ë·½·¨ËÍÈ¥JVMµ÷ÓÃ,Ò²¾ÍÊÇËµ,Òª´¦ÀíµÄ¶ÔÏóµÄ·½·¨Ö»ÄÜÍ¨¹ı´Ë·½·¨µ÷ÓÃ
-	     * ´Ë·½·¨ÊÇ¶¯Ì¬µÄ,²»ÊÇÊÖ¶¯µ÷ÓÃµÄ
+	     * è¦å¤„ç†çš„å¯¹è±¡ä¸­çš„æ¯ä¸ªæ–¹æ³•ä¼šè¢«æ­¤æ–¹æ³•é€å»JVMè°ƒç”¨,ä¹Ÿå°±æ˜¯è¯´,è¦å¤„ç†çš„å¯¹è±¡çš„æ–¹æ³•åªèƒ½é€šè¿‡æ­¤æ–¹æ³•è°ƒç”¨
+	     * æ­¤æ–¹æ³•æ˜¯åŠ¨æ€çš„,ä¸æ˜¯æ‰‹åŠ¨è°ƒç”¨çš„
 	     */
 	    public Object invoke(Object proxy, Method method, Object[] args)
 	            throws Throwable {
 	        Object result = null;
 	        try {
-	            //·´ÉäµÃµ½²Ù×÷ÕßµÄÊµÀı
+	            //åå°„å¾—åˆ°æ“ä½œè€…çš„å®ä¾‹
 	            Class<? extends Object> clazz = this.proxy.getClass();
-	            //·´ÉäµÃµ½²Ù×÷ÕßµÄStart·½·¨
+	            //åå°„å¾—åˆ°æ“ä½œè€…çš„Startæ–¹æ³•
 	            Method start = clazz.getDeclaredMethod("start",
 	                    new Class[] { Method.class });
-	            //·´ÉäÖ´ĞĞstart·½·¨
+	            //åå°„æ‰§è¡Œstartæ–¹æ³•
 	            start.invoke(this.proxy, new Object[] { method });
-	            //Ö´ĞĞÒª´¦Àí¶ÔÏóµÄÔ­±¾·½·¨
+	            //æ‰§è¡Œè¦å¤„ç†å¯¹è±¡çš„åŸæœ¬æ–¹æ³•
 	            result = method.invoke(this.delegate, args);
-	//            ·´ÉäµÃµ½²Ù×÷ÕßµÄend·½·¨
+	//            åå°„å¾—åˆ°æ“ä½œè€…çš„endæ–¹æ³•
 	            Method end = clazz.getDeclaredMethod("end",
 	                    new Class[] { Method.class });
-	//            ·´ÉäÖ´ĞĞend·½·¨
+	//            åå°„æ‰§è¡Œendæ–¹æ³•
 	            end.invoke(this.proxy, new Object[] { method });
 	
 	        } catch (Exception e) {

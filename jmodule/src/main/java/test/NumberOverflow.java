@@ -6,9 +6,9 @@ public class NumberOverflow {
 		int i3 = 1000000;
 	    System.out.println (Long.toHexString (i3*i3).toUpperCase());
 	    System.out.println (Integer.toHexString (i3*i3).toUpperCase());
-	    //ÕûĞÍÏà³Ë½á¹û³¬³ö×î´óÕûĞÍÖµ¾Í»á·¢ÉúÊı¾İÒç³ö£¬Ö±½Ó½ØÈ¡µÍ32Î»µÄÊıÖµ
+	    //æ•´å‹ç›¸ä¹˜ç»“æœè¶…å‡ºæœ€å¤§æ•´å‹å€¼å°±ä¼šå‘ç”Ÿæ•°æ®æº¢å‡ºï¼Œç›´æ¥æˆªå–ä½32ä½çš„æ•°å€¼
 	    System.out.println (i3*i3);
-	    //½â¾ö·½°¸£ºÇ¿ÖÆ×ª»»Îª¸ü´óÀàĞÍµÄÊı¾İ£¬»òÕßÌáÉıÄ³Ò»²Ù×÷ÊıµÄÀàĞÍ
+	    //è§£å†³æ–¹æ¡ˆï¼šå¼ºåˆ¶è½¬æ¢ä¸ºæ›´å¤§ç±»å‹çš„æ•°æ®ï¼Œæˆ–è€…æå‡æŸä¸€æ“ä½œæ•°çš„ç±»å‹
 	    System.out.println ((long)i3*i3);
 	    System.out.println (i3*1000000l);
 	}

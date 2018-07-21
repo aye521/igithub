@@ -30,7 +30,7 @@ public class ThreadLocalExample implements Runnable{
          * As you can see 
          * from the output that Thread-0 has changed the value of formatter
          *  but still thread-2 default formatter is same as the initialized value.
-         *  �������threadLocal�������һ���̸߳ı��˱�����ֵ����ô�ͻ�Ӱ�����е�֮��ʹ�øñ������߳�
+         *  如果不用threadLocal如果其中一个线程改变了变量的值，那么就会影响所有的之后使用该变量的线程
          * 
          * 
          */

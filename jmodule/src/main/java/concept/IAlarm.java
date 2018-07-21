@@ -1,10 +1,10 @@
 package concept;
 /**
- * ½Ó¿ÚÖ»ÄÜÉùÃ÷³£Á¿£¨Ä¬ÈÏpublic static final)ºÍ·½·¨£¨Ä¬ÈÏpublic£¬¿É²»ÓÃĞ´public¹Ø¼ü´Ê),Ò»°ã²»°üº¬³£Á¿£»
+ * æ¥å£åªèƒ½å£°æ˜å¸¸é‡ï¼ˆé»˜è®¤public static final)å’Œæ–¹æ³•ï¼ˆé»˜è®¤publicï¼Œå¯ä¸ç”¨å†™publicå…³é”®è¯),ä¸€èˆ¬ä¸åŒ…å«å¸¸é‡ï¼›
  * @author meaning
  *
  */
 public interface IAlarm {
-
+	String iFiled = "test";
 	void alarm();
 }
