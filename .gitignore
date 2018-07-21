@@ -2,3 +2,4 @@
 jmodule/.idea
 *.class
 *.iml
+jmodule/target
