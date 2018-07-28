@@ -11,6 +11,7 @@ public class EscapeTest {
 
     @Test
     public void quizOne(){
+        logger.info("processors : {}", Runtime.getRuntime().availableProcessors());
         int n = 16;
         toBinary(n);
         n |= n >>> 1;
