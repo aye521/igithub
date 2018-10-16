@@ -1,6 +1,7 @@
 package test;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,18 +16,37 @@ public class CharByteBitTest {
 //		toBits(~3 + 1);
 //		toBits(1 << 32);
 //		
-		echoBytesTest("c");
+//		echoBytesTest("c");
 //		charEncode();
 //		System.out.printf("%d",0xFE);
-		System.out.println(Charset.defaultCharset());
-		System.out.println(new String(Character.toChars(0x0D0A)));
-	}
+//		System.out.println(Charset.defaultCharset());
+//		System.out.println(new String(Character.toChars(0x0D0A)));
+        final int count_bits = Integer.SIZE - 3;
+        final int max = (1 << count_bits) - 1;
+        byte value = 12;
+        toBits((int) value);
+
+        toBits(2883584);
+        toBits(2883584 >> 18);
+        toBits((int)  0x3F);
+        Thread.currentThread().wait();
+
+
+    }
 
 
 	private static void toBits(Integer i) {
-		String binary = Integer.toBinaryString(i);
 		String hex = Integer.toHexString(i);
-		System.out.printf("Decimal: %11s, Binary : %32s(%2d), Hex: %8s \n",i,binary , binary.length(),hex);
+        String binary = String.format("%32s", Integer.toBinaryString(i)).replace(' ', '0');
+        StringBuilder sb = new StringBuilder(48);
+        final char[] chars = binary.toCharArray();
+        for (int i1 = 0; i1 < chars.length; i1++) {
+            sb.append(chars[i1]);
+            if ((i1 + 1) % 8 == 0 && i1!=0 && i1 != (chars.length -1)) {
+                sb.append(',');
+            }
+        }
+        System.out.printf("Decimal: %11s, Binary : %32s(%2d), Hex: %8s \n",i, sb , binary.length(),hex);
 	}
 	
 	

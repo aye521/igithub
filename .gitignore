@@ -2,3 +2,6 @@
 jmodule/.idea
 *.class
 *.iml
+jmodule/target/classes/log4j.properties
+jmodule/target/classes/logback.groovy
+jmodule/target/classes/logback.xml
