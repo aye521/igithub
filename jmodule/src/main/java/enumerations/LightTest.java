@@ -2,97 +2,97 @@ package enumerations;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
- /*
-  * Ã¶¾ÙÀàĞÍÄ¬ÈÏ¼Ì³ĞEnumÀà£¬±àÒëÆ÷»áÔÚ±àÒëÊ±×Ô¶¯Ôö¼ÓÒ»Ğ©·½·¨£¬±ÈÈç¾²Ì¬µÄvalues·½·¨£»
-  * Ã¶¾ÙÊÇÒ»ÖÖÌØÊâµÄclass£¬Ã¿Ò»¸ö¾ßÌåµÄÃ¶¾ÙÖµ¾ÍÊÇ¸ÃÃ¶¾ÙÀàµÄÒ»¸öÊµÀı
-  */
+/*
+ * æšä¸¾ç±»å‹é»˜è®¤ç»§æ‰¿Enumç±»ï¼Œç¼–è¯‘å™¨ä¼šåœ¨ç¼–è¯‘æ—¶è‡ªåŠ¨å¢åŠ ä¸€äº›æ–¹æ³•ï¼Œæ¯”å¦‚é™æ€çš„valuesæ–¹æ³•ï¼›
+ * æšä¸¾æ˜¯ä¸€ç§ç‰¹æ®Šçš„classï¼Œæ¯ä¸€ä¸ªå…·ä½“çš„æšä¸¾å€¼å°±æ˜¯è¯¥æšä¸¾ç±»çš„ä¸€ä¸ªå®ä¾‹
+ */
 public class LightTest {
- 
-    // 1. ¶¨ÒåÃ¶¾ÙÀàĞÍ
+
+    // 1. å®šä¹‰æšä¸¾ç±»å‹
     public enum Light {
-       // ÀûÓÃ¹¹Ôìº¯Êı´«²Î
-       RED (1), GREEN (3), YELLOW (2);
- 
-       // ¶¨ÒåË½ÓĞ±äÁ¿
-       private int nCode ;
- 
-       // ¹¹Ôìº¯Êı£¬Ã¶¾ÙÀàĞÍÖ»ÄÜÎªË½ÓĞ»òÕßpackage·¶Î§
-       private Light( int _nCode) {
-           this.nCode = _nCode;
-       }
- 
-       @Override
-       public String toString() {
-           return String.valueOf ( this.nCode );
-       }
+        // åˆ©ç”¨æ„é€ å‡½æ•°ä¼ å‚
+        RED (1), GREEN (3), YELLOW (2);
+
+        // å®šä¹‰ç§æœ‰å˜é‡
+        private int nCode ;
+
+        // æ„é€ å‡½æ•°ï¼Œæšä¸¾ç±»å‹åªèƒ½ä¸ºç§æœ‰æˆ–è€…packageèŒƒå›´
+        private Light( int _nCode) {
+            this.nCode = _nCode;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf ( this.nCode );
+        }
     }
-    
+
     public enum Day {
         SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
-        THURSDAY, FRIDAY, SATURDAY 
-        //Èç¹û»¹ÒªÎªÃ¶¾ÙÀàĞÍ¶¨ÒåÆäËûfield»òÕß·½·¨µÄ»°ĞèÒª·ÖºÅ(;)·Ö¸î£»
+        THURSDAY, FRIDAY, SATURDAY
+        //å¦‚æœè¿˜è¦ä¸ºæšä¸¾ç±»å‹å®šä¹‰å…¶ä»–fieldæˆ–è€…æ–¹æ³•çš„è¯éœ€è¦åˆ†å·(;)åˆ†å‰²ï¼›
     }
- 
+
     /**
-      * @param args
-      */
+     * @param args
+     */
     public static void main(String[] args ) {
- 
-    	System.out.println(Light.RED.name());
-    	Day day = Day.SUNDAY;
-    	System.out.println(Day.values().length);
-//       // 1. ±éÀúÃ¶¾ÙÀàĞÍ
-//       System.out.println( " ÑİÊ¾Ã¶¾ÙÀàĞÍµÄ±éÀú ......");
+
+        System.out.println(Light.RED.name());
+        Day day = Day.SUNDAY;
+        System.out.println(Day.values().length);
+//       // 1. éå†æšä¸¾ç±»å‹
+//       System.out.println( " æ¼”ç¤ºæšä¸¾ç±»å‹çš„éå† ......");
 //       testTraversalEnum ();
-// 
-//       // 2. ÑİÊ¾ EnumMap ¶ÔÏóµÄÊ¹ÓÃ
-//       System.out.println( " ÑİÊ¾ EnmuMap ¶ÔÏóµÄÊ¹ÓÃºÍ±éÀú ....." );
+//
+//       // 2. æ¼”ç¤º EnumMap å¯¹è±¡çš„ä½¿ç”¨
+//       System.out.println( " æ¼”ç¤º EnmuMap å¯¹è±¡çš„ä½¿ç”¨å’Œéå† ....." );
 //       testEnumMap ();
-// 
-//       // 3. ÑİÊ¾ EnmuSet µÄÊ¹ÓÃ
-//       System. out .println( " ÑİÊ¾ EnmuSet ¶ÔÏóµÄÊ¹ÓÃºÍ±éÀú ....." );
+//
+//       // 3. æ¼”ç¤º EnmuSet çš„ä½¿ç”¨
+//       System. out .println( " æ¼”ç¤º EnmuSet å¯¹è±¡çš„ä½¿ç”¨å’Œéå† ....." );
 //       testEnumSet ();
     }
- 
+
     /**
-      * ÑİÊ¾Ã¶¾ÙÀàĞÍµÄ±éÀú
-      */
+     * æ¼”ç¤ºæšä¸¾ç±»å‹çš„éå†
+     */
     private static void testTraversalEnum() {
-       Light[] allLight = Light.values ();
-       for (Light aLight : allLight) {
-           System. out .println( " µ±Ç°µÆ name £º " + aLight.name());
-           System. out .println( " µ±Ç°µÆ ordinal £º " + aLight.ordinal());
-           System. out .println( " µ±Ç°µÆ£º " + aLight);
-       }
+        Light[] allLight = Light.values ();
+        for (Light aLight : allLight) {
+            System. out .println( " å½“å‰ç¯ name ï¼š " + aLight.name());
+            System. out .println( " å½“å‰ç¯ ordinal ï¼š " + aLight.ordinal());
+            System. out .println( " å½“å‰ç¯ï¼š " + aLight);
+        }
     }
- 
+
     /**
-      * ÑİÊ¾ EnumMap µÄÊ¹ÓÃ£¬ EnumMap ¸ú HashMap µÄÊ¹ÓÃ²î²»¶à£¬Ö»²»¹ı key ÒªÊÇÃ¶¾ÙÀàĞÍ
-      */
+     * æ¼”ç¤º EnumMap çš„ä½¿ç”¨ï¼Œ EnumMap è·Ÿ HashMap çš„ä½¿ç”¨å·®ä¸å¤šï¼Œåªä¸è¿‡ key è¦æ˜¯æšä¸¾ç±»å‹
+     */
     private static void testEnumMap() {
-       // 1. ÑİÊ¾¶¨Òå EnumMap ¶ÔÏó£¬ EnumMap ¶ÔÏóµÄ¹¹Ôìº¯ÊıĞèÒª²ÎÊı´«Èë , Ä¬ÈÏÊÇ key µÄÀàµÄÀàĞÍ
-       EnumMap<Light, String> currEnumMap = new EnumMap<Light, String>(
-              Light. class );
-       currEnumMap.put(Light. RED , " ºìµÆ " );
-       currEnumMap.put(Light. GREEN , " ÂÌµÆ " );
-       currEnumMap.put(Light. YELLOW , " »ÆµÆ " );
- 
-       // 2. ±éÀú¶ÔÏó
-       for (Light aLight : Light.values ()) {
-           System. out .println( "[key=" + aLight.name() + ",value="
-                  + currEnumMap.get(aLight) + "]" );
-       }
+        // 1. æ¼”ç¤ºå®šä¹‰ EnumMap å¯¹è±¡ï¼Œ EnumMap å¯¹è±¡çš„æ„é€ å‡½æ•°éœ€è¦å‚æ•°ä¼ å…¥ , é»˜è®¤æ˜¯ key çš„ç±»çš„ç±»å‹
+        EnumMap<Light, String> currEnumMap = new EnumMap<Light, String>(
+                Light. class );
+        currEnumMap.put(Light. RED , " çº¢ç¯ " );
+        currEnumMap.put(Light. GREEN , " ç»¿ç¯ " );
+        currEnumMap.put(Light. YELLOW , " é»„ç¯ " );
+
+        // 2. éå†å¯¹è±¡
+        for (Light aLight : Light.values ()) {
+            System. out .println( "[key=" + aLight.name() + ",value="
+                    + currEnumMap.get(aLight) + "]" );
+        }
     }
- 
+
     /**
-      * ÑİÊ¾ EnumSet ÈçºÎÊ¹ÓÃ£¬ EnumSet ÊÇÒ»¸ö³éÏóÀà£¬»ñÈ¡Ò»¸öÀàĞÍµÄÃ¶¾ÙÀàĞÍÄÚÈİ <BR/>
-      * ¿ÉÒÔÊ¹ÓÃ allOf ·½·¨
-      */
+     * æ¼”ç¤º EnumSet å¦‚ä½•ä½¿ç”¨ï¼Œ EnumSet æ˜¯ä¸€ä¸ªæŠ½è±¡ç±»ï¼Œè·å–ä¸€ä¸ªç±»å‹çš„æšä¸¾ç±»å‹å†…å®¹ <BR/>
+     * å¯ä»¥ä½¿ç”¨ allOf æ–¹æ³•
+     */
     private static void testEnumSet() {
-       EnumSet<Light> currEnumSet = EnumSet.allOf (Light. class );
-       for (Light aLightSetElement : currEnumSet) {
-           System. out .println( " µ±Ç° EnumSet ÖĞÊı¾İÎª£º " + aLightSetElement);
-       }
- 
+        EnumSet<Light> currEnumSet = EnumSet.allOf (Light. class );
+        for (Light aLightSetElement : currEnumSet) {
+            System. out .println( " å½“å‰ EnumSet ä¸­æ•°æ®ä¸ºï¼š " + aLightSetElement);
+        }
+
     }
 }

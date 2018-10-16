@@ -10,8 +10,8 @@ import java.util.List;
 public class CharByteBitTest {
 
 	public static void main(String ... args) throws Exception {
-		//负数的正数（位操作）：减1取反（补码）
-//		toBits(~(-3-1));
+		//负数的正数（位操作）：取反加1（补码）
+//		toBits(~(-3) + 1));
 //		//正数的负数（位操作）：取反加1（补码）
 //		toBits(~3 + 1);
 //		toBits(1 << 32);

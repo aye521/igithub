@@ -2,14 +2,14 @@ package concept;
 
 public abstract class AbstractDoor implements IAlarm {
 
-// ³éÏóÀàÉùÃ÷implementµÄ½Ó¿Ú£¬¿ÉÑ¡²»ÊµÏÖ,µ«×ÓÀà±ØĞëÊµÏÖ
+// æŠ½è±¡ç±»å£°æ˜implementçš„æ¥å£ï¼Œå¯é€‰ä¸å®ç°,ä½†å­ç±»å¿…é¡»å®ç°
 //	@Override
 //	public void alarm() {
 //
 //	}
-	
+
 	abstract void open();
-	
+
 	abstract void close();
 
 }

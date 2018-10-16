@@ -5,22 +5,21 @@ import java.util.Arrays;
 
 public class Abstract_Interface_test {
 
-	public static interface MyInterface {
+	public interface MyInterface {
 		void foo();
 	}
-	
+
 	/**
-	 * ÄÚ²¿¾²Ì¬Àà
-	 * Ê×ÏÈ£¬Ö»ÓĞ¾²Ì¬ÄÚ²¿Àà²ÅÄÜ¶¨Òå¾²Ì¬µÄ³ÉÔ±£¨·Ç¾²Ì¬ÄÚ²¿ÀàÄÚ²¿²»ÄÜ¶¨Òåstatic³ÉÔ±£©£»
-	 * Æä´Î£¬¾²Ì¬ÄÚ²¿ÀàÖ»ÄÜ·ÃÎÊÍâ²¿ÀàµÄ¾²Ì¬³ÉÔ±£¬·Ç¾²Ì¬µÄÔòÃ»ÓĞÕâ¸öÏŞÖÆ£»
-	 * ×îºó£¬Íâ²¿·ÃÎÊÊ±£¬¾²Ì¬Àà¿ÉÖ±½ÓÊ¹ÓÃ£¬¶ø·Ç¾²Ì¬ÀàÔò±ØĞëÏÈ´´½¨Íâ²¿ÀàµÄÊµÀı¶ÔÏó²ÅÄÜÒıÓÃ£»
+	 * å†…éƒ¨é™æ€ç±»
+	 * é¦–å…ˆï¼Œåªæœ‰é™æ€å†…éƒ¨ç±»æ‰èƒ½å®šä¹‰é™æ€çš„æˆå‘˜ï¼ˆéé™æ€å†…éƒ¨ç±»å†…éƒ¨ä¸èƒ½å®šä¹‰staticæˆå‘˜ï¼‰ï¼›
+	 * å…¶æ¬¡ï¼Œé™æ€å†…éƒ¨ç±»åªèƒ½è®¿é—®å¤–éƒ¨ç±»çš„é™æ€æˆå‘˜ï¼Œéé™æ€çš„åˆ™æ²¡æœ‰è¿™ä¸ªé™åˆ¶ï¼›
+	 * æœ€åï¼Œå¤–éƒ¨è®¿é—®æ—¶ï¼Œé™æ€ç±»å¯ç›´æ¥ä½¿ç”¨ï¼Œè€Œéé™æ€ç±»åˆ™å¿…é¡»å…ˆåˆ›å»ºå¤–éƒ¨ç±»çš„å®ä¾‹å¯¹è±¡æ‰èƒ½å¼•ç”¨ï¼›
 	 * @author meaning
 	 *
 	 */
 
 	@SuppressWarnings("serial")
-	public static class BaseClass implements MyInterface, Cloneable,
-			Serializable {
+	public static class BaseClass implements MyInterface, Cloneable,Serializable {
 
 		@Override
 		public void foo() {

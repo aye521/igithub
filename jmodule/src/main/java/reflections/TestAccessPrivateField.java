@@ -4,32 +4,32 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
- * Í¨¹ı·´ÉäÉèÖÃË½ÓĞ±äÁ¿(Ã»ÓĞÌá¹©publicµÄsetter·½·¨)£¬Ïñspring¶ÔË½ÓĞ±äÁ¿µÄÒÀÀµ×¢Èë£¨Ã»ÓĞ¹«¿ªµÄsetter£©
- * Ó¦¸ÃÒ²ÊÇÍ¨¹ıÕâÖÖ»úÖÆ
+ * é€šè¿‡åå°„è®¾ç½®ç§æœ‰å˜é‡(æ²¡æœ‰æä¾›publicçš„setteræ–¹æ³•)ï¼Œåƒspringå¯¹ç§æœ‰å˜é‡çš„ä¾èµ–æ³¨å…¥ï¼ˆæ²¡æœ‰å…¬å¼€çš„setterï¼‰
+ * åº”è¯¥ä¹Ÿæ˜¯é€šè¿‡è¿™ç§æœºåˆ¶
  * @author meaning
  *
  */
 
 public class TestAccessPrivateField {
-	
-	static Modifier accessLevel;
 
-	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, InstantiationException, ClassNotFoundException {
-		Class<?> class1 = Class.forName("reflections.ObjWithPrivateField");
+    static Modifier accessLevel;
+
+    public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+        Class<?> class1 = Class.forName("reflections.ObjWithPrivateField");
         Object object = class1.newInstance();
         Field[] fields = class1.getDeclaredFields();
         Field field = fields[0];
         System.out.println("field name : " + field.getName() + ", modifier : " + Modifier.toString(field.getModifiers()));
-        //ÉèÖÃË½ÓĞ±äÁ¿µÄ¿É·ÃÎÊĞÔ£¬Èç¹ûjvm°²È«¹ÜÀí²»ÔÊĞíµÄ»°»á±¨Òì³££ºIllegalAccessException
+        //è®¾ç½®ç§æœ‰å˜é‡çš„å¯è®¿é—®æ€§ï¼Œå¦‚æœjvmå®‰å…¨ç®¡ç†ä¸å…è®¸çš„è¯ä¼šæŠ¥å¼‚å¸¸ï¼šIllegalAccessException
         field.setAccessible(true);
         System.out.println("field type : " + field.getType());
-        //¸øË½ÓĞ±äÁ¿¸³Öµ
+        //ç»™ç§æœ‰å˜é‡èµ‹å€¼
         field.set(object,Class.forName(field.getType().getName()).newInstance() );
         ObjWithPrivateField obj = ((ObjWithPrivateField)object);
-        //²âÊÔµ÷ÓÃË½ÓĞ±äÁ¿µÄ·½·¨
+        //æµ‹è¯•è°ƒç”¨ç§æœ‰å˜é‡çš„æ–¹æ³•
         System.out.println("private field's desc : "+obj.getPrivateField().getDesc());
-	}
-	
+    }
+
 //	static String getEnum(int ordinal){
 //		Modifier[] values = Modifier.values();
 //		for (Modifier modifier : values) {

@@ -4,14 +4,14 @@ import java.lang.reflect.Method;
 
 public interface IOperation {
 
-	   /**
-	    * ·½·¨Ö´ĞĞÖ®Ç°µÄ²Ù×÷
-	    * @param method
-	    */
-	   void start(Method method);
-	   /**
-	    * ·½·¨Ö´ĞĞÖ®ºóµÄ²Ù×÷
-	    * @param method
-	    */
-	   void end(Method method);
+	/**
+	 * æ–¹æ³•æ‰§è¡Œä¹‹å‰çš„æ“ä½œ
+	 * @param method
+	 */
+	void start(Method method);
+	/**
+	 * æ–¹æ³•æ‰§è¡Œä¹‹åçš„æ“ä½œ
+	 * @param method
+	 */
+	void end(Method method);
 }

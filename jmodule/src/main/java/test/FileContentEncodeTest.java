@@ -16,7 +16,7 @@ public class FileContentEncodeTest {
 	}
 
 	/**
-	 * windows 记事本的unicode对应little endian（低byte地址存储高位，高byte地址存储地位，多字节的时候，big endian相反�?
+	 * windows 记事本的unicode对应little endian（低byte地址存储高位，高byte地址存储地位，多字节的时候，big endian相反
 	 * @param in
 	 * @throws IOException
 	 */
@@ -33,7 +33,7 @@ public class FileContentEncodeTest {
 	}
 
 	/**
-	 * utf-8是unicode的实现之�?��不过采用变长的存储方式，比如字母用一个byte，一个中文字符用3个byte等，�?��读取的时候必须判断字符的存储方式
+	 * utf-8是unicode的实现之,不过采用变长的存储方式，比如字母用一个byte，一个中文字符用3个byte等，读取的时候必须判断字符的存储方式
 	 * @param in
 	 * @throws UnsupportedEncodingException
 	 * @throws IOException
@@ -45,20 +45,20 @@ public class FileContentEncodeTest {
 			if (first[0] >= 0) { // ASCII 字元
 				System.out.print(new String(first, "UTF-8"));
 				System.out.printf("  %h%n", first[0] & 0x00FF);
-			} else if (first[0] >= -16) { // 四�?位元組字�?
+			} else if (first[0] >= -16) { // 四位元組字
 				in.read(remain, 0, 3);
 				System.out.print(new String(new byte[] { first[0], remain[0],
 						remain[1], remain[2] }, "UTF-8"));
 				System.out.printf(" %h %h %h %h%n", first[0] & 0x00FF,
 						remain[0] & 0x00FF, remain[1] & 0x00FF,
 						remain[2] & 0x00FF);
-			} else if (first[0] >= -32) { // 三�?位元組字�?
+			} else if (first[0] >= -32) { // 三位元組字
 				in.read(remain, 0, 2);
 				System.out.print(new String(new byte[] { first[0], remain[0],
 						remain[1] }, "UTF-8"));
 				System.out.printf(" %h %h %h%n", first[0] & 0x00FF,
 						remain[0] & 0x00FF, remain[1] & 0x00FF);
-			} else if (first[0] >= -64) { // 兩�?位元組字�?
+			} else if (first[0] >= -64) { // 兩位元組字
 				in.read(remain, 0, 1);
 				System.out.print(new String(new byte[] { first[0], remain[0] },
 						"UTF-8"));
